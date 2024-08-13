@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Acme } from "next/font/google";
+import { Harmattan } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 
-const fonts = Acme ({
+const fonts = Harmattan({
   subsets: ["latin"],
-  weight: "400",
+  weight: "500",
   variable: "--font-sacramento",
 });
 
@@ -21,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fonts.className}>
-        <Nav />
-        {children}</body>
+      <body className={fonts.className}>{children}</body>
     </html>
   );
 }
