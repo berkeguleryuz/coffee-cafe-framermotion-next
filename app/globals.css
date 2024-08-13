@@ -31,12 +31,3 @@ body {
     text-wrap: balance;
   }
 }
-
-.bgImage {
-  background-image: url("/public/coffee1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-}

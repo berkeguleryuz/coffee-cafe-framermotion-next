@@ -4,13 +4,6 @@ import background from "../public/bg-slate.png";
 import Nav from "./Nav";
 import Image from "next/image";
 
-const imageBg = {
-  backgroundImage: `url(${background})`,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
 type Props = {};
 
 const Hero = (props: Props) => {
