@@ -23,10 +23,25 @@ const Hero = (props: Props) => {
               <motion.h1
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 0.7,
+                }}
                 className="text-7xl font-bold leading-tight ml-14">
                 Clodron Coffee
               </motion.h1>
-              <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 1,
+                }}
+                className="relative">
                 <div className="relative z-10 space-y-3">
                   <h2 className="text-2xl">It is a Lifestyle</h2>
                   <h3 className="text-md opacity-55 leading-loose">
@@ -39,18 +54,24 @@ const Hero = (props: Props) => {
                   </h3>
                 </div>
                 <div className="absolute -top-6 -left-10 w-[250px] h-[190px] bg-gray-700/25"></div>
-              </div>
+              </motion.div>
             </div>
             {/* hero image  */}
             <div className="relative">
-              <Image
+              <motion.img
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 0.4,
+                }}
                 src={"/black.png"}
                 alt=""
                 width={350}
                 height={350}
-                unoptimized={true}
                 className="relative object-contain scale-60 md:scale-100 z-40 drop-shadow-2xl"
-                priority
               />
               {/* ring area orange */}
               <div className="h-[180px] w-[180px] absolute top-24 -right-16 border-orange-300 rounded-full z-10 border-[20px]" />
@@ -63,7 +84,16 @@ const Hero = (props: Props) => {
               </div>
             </div>
             {/* third div */}
-            <div className="text-orange-200 mt-[100px] md:mt-0 p-4 space-y-28">
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                delay: 1.4,
+              }}
+              className="text-orange-200 mt-[100px] md:mt-0 p-4 space-y-28">
               <h1 className="opacity-0 text-7xl font-bold leading-tight ml-14">
                 Clodron Coffee
               </h1>
@@ -78,7 +108,7 @@ const Hero = (props: Props) => {
                 </div>
                 <div className="absolute -top-6 -right-10 w-[250px] h-[190px] bg-[#1A1F24]"></div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
