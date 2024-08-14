@@ -3,6 +3,7 @@ import React from "react";
 import background from "../public/bg-slate.png";
 import Nav from "./Nav";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -19,9 +20,12 @@ const Hero = (props: Props) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
             {/* text content */}
             <div className="text-orange-200 mt-[100px] md:mt-0 p-4 space-y-28">
-              <h1 className="text-7xl font-bold leading-tight ml-14">
+              <motion.h1
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-7xl font-bold leading-tight ml-14">
                 Clodron Coffee
-              </h1>
+              </motion.h1>
               <div className="relative">
                 <div className="relative z-10 space-y-3">
                   <h2 className="text-2xl">It is a Lifestyle</h2>
@@ -59,7 +63,22 @@ const Hero = (props: Props) => {
               </div>
             </div>
             {/* third div */}
-            <div className=""></div>
+            <div className="text-orange-200 mt-[100px] md:mt-0 p-4 space-y-28">
+              <h1 className="opacity-0 text-7xl font-bold leading-tight ml-14">
+                Clodron Coffee
+              </h1>
+              <div className="relative">
+                <div className="relative z-10 space-y-3">
+                  <h2 className="text-2xl">Make your day better</h2>
+                  <h3 className="text-md opacity-55 leading-loose">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestiae assumenda laborum voluptatibus repellat facilis
+                    accusantium quo eligendi quae voluptas quam ipsum.
+                  </h3>
+                </div>
+                <div className="absolute -top-6 -right-10 w-[250px] h-[190px] bg-[#1A1F24]"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
