@@ -79,7 +79,7 @@ const Hero = (props: Props) => {
               {/* text */}
               <div className="absolute -top-20 left-[200px] z-[1]">
                 <h1 className="text-[140px] scale-150 font-bold text-neutral-900/20 leading-none">
-                  Clodron Global
+                  Clodron Global 
                 </h1>
               </div>
             </div>
