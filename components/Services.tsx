@@ -48,8 +48,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.6,
-      staggerChildren: 0.4,
+      delay: 0.7,
+      staggerChildren: 0.6,
     },
   },
 };
@@ -65,7 +65,7 @@ const Services = (props: Props) => {
           type: "spring",
           stiffness: 150,
           damping: 10,
-          delay: 0.5,
+          delay: 0.7,
         }}
         className="text-center max-w-lg mx-auto space-y-2">
         <h1 className="text-3xl font-bold text-neutral-900">
@@ -93,7 +93,7 @@ const Services = (props: Props) => {
                 type: "spring",
                 stiffness: 100,
                 damping: 10,
-                delay: 0.4,
+                delay: 0.9,
               }}
               src={service.image}
               alt={service.title}

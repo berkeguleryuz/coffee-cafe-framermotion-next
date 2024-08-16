@@ -21,7 +21,7 @@ const Hero = (props: Props) => {
           {/* N */}
           <Nav sidebar={sidebar} setSidebar={setSidebar} />
           {/* H */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[650px]">
             {/* text content */}
             <div className="text-orange-200 mt-[100px] md:mt-0 p-4 space-y-28">
               <motion.h1
