@@ -1,21 +1,25 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import background from "../public/bg-slate.png";
 import Nav from "./Nav";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { RiTwitterXFill } from "react-icons/ri";
 
 type Props = {};
 
 const Hero = (props: Props) => {
+  const [sidebar, setSidebar] = useState(false);
   return (
     <main
       className="bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${background.src})` }}>
-      <section className="min-h-[750px] w-full justify-center flex">
+      <section className="relative min-h-[750px] w-full justify-center flex">
         <div className="container px-2">
           {/* N */}
-          <Nav />
+          <Nav sidebar={sidebar} setSidebar={setSidebar} />
           {/* H */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
             {/* text content */}
@@ -77,11 +81,20 @@ const Hero = (props: Props) => {
               <div className="h-[180px] w-[180px] absolute top-24 -right-16 border-orange-300 rounded-full z-10 border-[20px]" />
 
               {/* text */}
-              <div className="absolute -top-20 left-[200px] z-[1]">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 1,
+                }}
+                className="absolute -top-20 left-[200px] z-[1]">
                 <h1 className="text-[140px] scale-150 font-bold text-neutral-900/20 leading-none">
-                  Clodron Global 
+                  Clodron Global
                 </h1>
-              </div>
+              </motion.div>
             </div>
             {/* third div */}
             <motion.div
@@ -111,6 +124,39 @@ const Hero = (props: Props) => {
             </motion.div>
           </div>
         </div>
+
+        {/* sidebar menu  */}
+        {sidebar && (
+          <motion.div
+            initial={{ x: "100%" }}
+            whileInView={{ x: 0 }}
+            className="absolute top-0 right-0 w-[185px] h-full bg-gradient-to-b from-orange-400 to-orange-600 backdrop-blur-sm z-10 text-white">
+            <div className="w-full h-full flex justify-center items-center gap-6 flex-col">
+              {/* line */}
+              <div className="w-[1px] h-[70px] bg-white flex" />
+              {/* icons */}
+              <div className="flex flex-col gap-3">
+                <Link
+                  href={"/"}
+                  className="inline-block p-2 rounded-full cursor-pointer border-white border">
+                  <FaFacebook className="w-6 h-6" />
+                </Link>
+                <Link
+                  href={"/"}
+                  className="inline-block p-2 rounded-full cursor-pointer border-white border">
+                  <RiTwitterXFill className="w-6 h-6" />
+                </Link>
+                <Link
+                  href={"/"}
+                  className="inline-block p-2 rounded-full cursor-pointer border-white border">
+                  <FaInstagram className="w-6 h-6" />
+                </Link>
+              </div>
+
+              <div className="w-[1px] h-[70px] bg-white" />
+            </div>
+          </motion.div>
+        )}
       </section>
     </main>
   );
